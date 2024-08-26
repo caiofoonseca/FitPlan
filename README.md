@@ -7,8 +7,8 @@
 ### - Caio Fonseca
 ### - Rodrigo Torres
 ### - Marcelo Bressani
-### - Arthur
-### - João Claudio
+### - Arthur Lúcio Silva
+### - João Claudio Beltrão
 
 ## JIRA
 
