@@ -12,4 +12,4 @@
 
 ## JIRA
 
-### 
+### https://fitplan1.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiNDlhMDkwY2I2ZDdjNDZjMWIxNzhmYjIwMzgzZjkzNGYiLCJwIjoiaiJ9
