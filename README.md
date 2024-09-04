@@ -24,7 +24,7 @@
 
 ## Backlog
 
-### 
+### ![Backlog da entrega 1](https://github.com/user-attachments/assets/32a5b339-5fbd-42a0-8ca2-1892b3746939)
 
 ## Quadro 
 
