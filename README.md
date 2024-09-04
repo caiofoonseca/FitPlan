@@ -21,3 +21,11 @@
 ## FIGMA 
 
 ### https://www.figma.com/design/UF1334LXZHx82xlaHPV6Ad/FitPlan?node-id=0-1&t=Vurpt7kQr4dsLhXk-1
+
+## Backlog
+
+### 
+
+## Quadro 
+
+###
