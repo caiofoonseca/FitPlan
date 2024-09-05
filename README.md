@@ -10,22 +10,23 @@
 ### - Arthur Lúcio Silva (alams2@cesar.school)
 ### - João Claudio Beltrão (jccbf@cesar.school)
 
-## JIRA
+## ENTREGA 1
+### JIRA
 
-### https://fitplan1.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiNDlhMDkwY2I2ZDdjNDZjMWIxNzhmYjIwMzgzZjkzNGYiLCJwIjoiaiJ9
+#### https://fitplan1.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiNDlhMDkwY2I2ZDdjNDZjMWIxNzhmYjIwMzgzZjkzNGYiLCJwIjoiaiJ9
 
-## HISTÓRIAS DE USUÁRIO, SKETCHES E STORYBOARDS
+### HISTÓRIAS DE USUÁRIO, SKETCHES E STORYBOARDS
 
-### https://docs.google.com/document/d/1mXOrMMoz56LhczCAXAJR8os5Ocz_8ObfpA3Uqa7sZ24/edit?usp=sharing
+#### https://docs.google.com/document/d/1mXOrMMoz56LhczCAXAJR8os5Ocz_8ObfpA3Uqa7sZ24/edit?usp=sharing
 
-## FIGMA 
+### FIGMA 
 
 ### https://www.figma.com/design/UF1334LXZHx82xlaHPV6Ad/FitPlan?node-id=0-1&t=Vurpt7kQr4dsLhXk-1
 
-## Backlog
+### Backlog
 
-### ![Backlog da entrega 1](https://github.com/user-attachments/assets/32a5b339-5fbd-42a0-8ca2-1892b3746939)
+#### ![Backlog da entrega 1](https://github.com/user-attachments/assets/32a5b339-5fbd-42a0-8ca2-1892b3746939)
 
-## Quadro 
+### Quadro 
 
-### ![Quadro sprint 1 entrega 1](https://github.com/user-attachments/assets/de0e3d0c-aaad-439a-8454-5ff3e786308f)
+#### ![Quadro sprint 1 entrega 1](https://github.com/user-attachments/assets/de0e3d0c-aaad-439a-8454-5ff3e786308f)
