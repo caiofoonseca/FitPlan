@@ -12,8 +12,8 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Poppins', sans-serif;
+            background-color: #4caf50; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,15 +26,17 @@
             width: 90%;
             max-width: 500px;
             padding: 2rem;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
-            border-radius: 8px;
+            border-radius: 10px;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: bold;
+            color: #333;
             margin-bottom: 2rem;
+            text-transform: uppercase;
         }
 
         .duracao-group {
@@ -44,36 +46,52 @@
         .btn-duracao {
             width: 100%;
             padding: 1rem;
-            background-color: #ccc;
+            background-color: #388e3c;
+            color: white;
             border: none;
             font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 1rem;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 6px;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .btn-duracao:hover {
-            background-color: #aaa;
+            background-color: #2e7d32; 
+            transform: translateY(-2px);
         }
 
         .voltar {
             display: inline-block;
             margin-top: 1.5rem;
             font-size: 1rem;
-            color: #000;
+            color: #333;
             text-decoration: none;
         }
 
         .voltar:hover {
             text-decoration: underline;
         }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 400px;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+        }
+
     </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="container">
-        <h1>ESCOLHA A DURAÇÃO DO SEU TREINO:</h1>
+        <h1>Escolha a Duração do Seu Treino:</h1>
         
         <form method="POST">
             {% csrf_token %}
