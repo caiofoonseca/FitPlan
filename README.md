@@ -40,7 +40,7 @@ https://github.com/user-attachments/assets/03bfa69d-180b-479c-8a89-3dc23dc81837
 
 ### Backlog
 
-
+#### ![backlog entrega 2](https://github.com/user-attachments/assets/408d80b3-27aa-49a7-a32b-ea9d73927958)
 
 ### Quadro 
 
