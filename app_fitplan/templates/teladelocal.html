@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitPlan - Duração do Treino</title>
+    <title>FitPlan - Local de Treino</title>
     <style>
         * {
             margin: 0;
@@ -37,11 +37,11 @@
             margin-bottom: 2rem;
         }
 
-        .duracao-group {
+        .local-group {
             margin-bottom: 1.5rem;
         }
 
-        .btn-duracao {
+        .btn-local {
             width: 100%;
             padding: 1rem;
             background-color: #ccc;
@@ -53,7 +53,7 @@
             border-radius: 5px;
         }
 
-        .btn-duracao:hover {
+        .btn-local:hover {
             background-color: #aaa;
         }
 
@@ -73,16 +73,16 @@
 <body>
 
     <div class="container">
-        <h1>ESCOLHA A DURAÇÃO DO SEU TREINO:</h1>
+        <h1>ESCOLHA O SEU LOCAL DE TREINO:</h1>
         
         <form method="POST">
             {% csrf_token %}
-            <button type="submit" name="duracao" value="45MIN" class="btn-duracao">45MIN</button>
-            <button type="submit" name="duracao" value="1HR" class="btn-duracao">1HR</button>
-            <button type="submit" name="duracao" value="1HR 30MIN" class="btn-duracao">1HR 30MIN</button>
+            <button type="submit" name="local" value="Em casa" class="btn-local">EM CASA</button>
+            <button type="submit" name="local" value="Na academia" class="btn-local">NA ACADEMIA</button>
+            <button type="submit" name="local" value="Ao ar livre" class="btn-local">AO AR LIVRE</button>
         </form>
 
-        <a href="/intensidade/" class="voltar">Voltar à Intensidade</a>
+        <a href="/duracao/" class="voltar">Voltar à Duração</a>
     </div>
 
 </body>

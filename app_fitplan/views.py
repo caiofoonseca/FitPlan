@@ -45,7 +45,17 @@ def intensidade_view(request):
         return redirect('duracao')
     return render(request, 'teladeintensidade.html')
 
-def duracao_view(request):
-    intensidade = request.session.get('intensidade', 'Não selecionada')
-    return render(request, 'teladeduracao.html', {'intensidade': intensidade})
 
+def duracao_view(request):
+    if request.method == 'POST':
+        duracao = request.POST.get('duracao')
+        request.session['duracao'] = duracao
+        return redirect('local')
+    return render(request, 'teladeduracao.html')
+
+def local_view(request):
+    if request.method == 'POST':
+        local = request.POST.get('local')
+        request.session['local'] = local
+        return redirect('menu') 
+    return render(request, 'teladelocal.html')

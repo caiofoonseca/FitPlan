@@ -8,4 +8,5 @@ urlpatterns = [
     path('cadastro/', views.cadastro_view, name='cadastro'),
     path('intensidade/', views.intensidade_view, name='intensidade'),
     path('duracao/', views.duracao_view, name='duracao'),
+    path('local/', views.local_view, name='local'),
 ]
