@@ -32,15 +32,12 @@
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 2rem; 
             font-weight: bold;
             color: #333;
             margin-bottom: 2rem;
             text-transform: uppercase;
-        }
-
-        .duracao-group {
-            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
         }
 
         .btn-duracao {
@@ -58,20 +55,30 @@
         }
 
         .btn-duracao:hover {
-            background-color: #2e7d32; 
+            background-color: #2e7d32;
             transform: translateY(-2px);
         }
 
-        .voltar {
+        .btn-voltar {
             display: inline-block;
-            margin-top: 1.5rem;
+            width: 60%;
+            padding: 0.6rem;
+            background-color: transparent;
+            color: #388e3c;
+            border: 2px solid #388e3c; 
             font-size: 1rem;
-            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+            text-align: center;
             text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 1rem;
         }
 
-        .voltar:hover {
-            text-decoration: underline;
+        .btn-voltar:hover {
+            background-color: #388e3c;
+            color: white;
         }
 
         @media (min-width: 768px) {
@@ -80,7 +87,7 @@
             }
 
             h1 {
-                font-size: 3rem;
+                font-size: 2.2rem;
             }
         }
 
@@ -91,7 +98,7 @@
 <body>
 
     <div class="container">
-        <h1>Escolha a Duração do Seu Treino:</h1>
+        <h1>Escolha a Duração do Seu Treino</h1>
         
         <form method="POST">
             {% csrf_token %}
@@ -100,7 +107,8 @@
             <button type="submit" name="duracao" value="1HR 30MIN" class="btn-duracao">1HR 30MIN</button>
         </form>
 
-        <a href="/intensidade/" class="voltar">Voltar à Intensidade</a>
+        <a href="/intensidade/" class="btn-voltar">Voltar à Intensidade</a>
+        <a href="/menu/" class="btn-voltar">Voltar ao Menu</a>
     </div>
 
 </body>

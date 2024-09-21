@@ -32,11 +32,12 @@
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 2rem; 
             font-weight: bold;
             color: #333;
             margin-bottom: 2rem;
             text-transform: uppercase;
+            letter-spacing: 1px; 
         }
 
         .intensidade-group {
@@ -62,16 +63,26 @@
             transform: translateY(-2px); 
         }
 
-        .voltar {
+        .btn-voltar {
             display: inline-block;
-            margin-top: 1.5rem;
+            width: 60%; 
+            padding: 0.6rem;
+            background-color: transparent;
+            color: #388e3c;
+            border: 2px solid #388e3c; 
             font-size: 1rem;
-            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+            text-align: center;
             text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 1.5rem;
         }
 
-        .voltar:hover {
-            text-decoration: underline;
+        .btn-voltar:hover {
+            background-color: #388e3c;
+            color: white;
         }
 
         @media (min-width: 768px) {
@@ -80,7 +91,7 @@
             }
 
             h1 {
-                font-size: 3rem;
+                font-size: 2.2rem;
             }
         }
 
@@ -100,7 +111,7 @@
             <button type="submit" name="intensidade" value="Intenso" class="btn-intensidade">Intenso</button>
         </form>
 
-        <a href="/menu/" class="voltar">Voltar ao Menu</a>
+        <a href="/menu/" class="btn-voltar">Voltar ao Menu</a>
     </div>
 
 </body>

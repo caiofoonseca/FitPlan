@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +12,8 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #4caf50;
+            font-family: 'Poppins', sans-serif;
+            background-color: #4caf50; /* Fundo verde */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -27,14 +26,13 @@
             width: 90%;
             max-width: 400px;
             padding: 2rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra leve */
             text-align: center;
             border-radius: 10px;
         }
 
         h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3rem;
+            font-size: 2.5rem; /* Reduzido o tamanho do título */
             font-weight: bold;
             color: #333;
             margin-bottom: 1.5rem;
@@ -54,7 +52,7 @@
         input[type="text"],
         input[type="password"] {
             width: 100%;
-            padding: 0.8rem;
+            padding: 0.6rem; /* Tamanho dos campos de input reduzido */
             margin-bottom: 1.5rem;
             border: 2px solid #ddd;
             border-radius: 6px;
@@ -65,39 +63,50 @@
 
         input[type="text"]:focus,
         input[type="password"]:focus {
-            border-color: #388e3c; 
-            box-shadow: 0 0 8px rgba(56, 142, 60, 0.3);
+            border-color: #388e3c; /* Verde ao focar */
+            box-shadow: 0 0 8px rgba(56, 142, 60, 0.3); /* Sombra verde */
             outline: none;
         }
 
-        .btn-avancar {
-            width: 100%;
-            padding: 0.8rem;
+        .btn {
+            display: inline-block;
+            width: 60%; 
+            padding: 0.8rem; 
             background-color: #388e3c;
             color: white;
             border: none;
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
             border-radius: 6px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 10px auto; 
+        }
+
+        .btn:hover {
+            background-color: #2e7d32;
+            transform: translateY(-2px);
+        }
+
+        .btn-cadastre-se {
+            display: inline-block;
+            width: 60%;
+            padding: 0.6rem; 
+            background-color: transparent;
+            color: #388e3c; 
+            border: 2px solid #388e3c;
+            cursor: pointer;
+            border-radius: 6px;
+            text-align: center;
+            text-decoration: none;
             transition: background-color 0.3s, transform 0.3s;
         }
 
-        .btn-avancar:hover {
-            background-color: #2e7d32; 
-            transform: translateY(-2px); 
-        }
-
-        .cadastre-se {
-            display: block;
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
-            color: #333;
-            text-decoration: none;
-        }
-
-        .cadastre-se:hover {
-            text-decoration: underline;
+        .btn-cadastre-se:hover {
+            background-color: #388e3c;
+            color: white; 
         }
 
         @media (min-width: 768px) {
@@ -106,11 +115,11 @@
             }
 
             h1 {
-                font-size: 3.5rem;
+                font-size: 2.8rem; 
             }
 
-            .btn-avancar {
-                font-size: 1.3rem;
+            .btn {
+                font-size: 1rem;
             }
         }
 
@@ -123,7 +132,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
     <div class="container">
@@ -136,11 +144,11 @@
             <label for="password">SENHA:</label>
             <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
 
-            <button type="submit" class="btn-avancar">AVANÇAR</button>
+            <button type="submit" class="btn">AVANÇAR</button>
         </form>
-        <a href="/cadastro" class="cadastre-se">CADASTRE-SE</a>
+
+        <a href="/cadastro" class="btn btn-cadastre-se">CADASTRE-SE</a>
     </div>
 
 </body>
-
 </html>
