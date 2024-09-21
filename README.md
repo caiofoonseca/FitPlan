@@ -11,6 +11,7 @@
 ### - João Claudio Beltrão (jccbf@cesar.school)
 
 ## ENTREGA 1
+
 ### JIRA
 
 #### https://fitplan1.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiNDlhMDkwY2I2ZDdjNDZjMWIxNzhmYjIwMzgzZjkzNGYiLCJwIjoiaiJ9
@@ -36,8 +37,24 @@
 #### 
 https://github.com/user-attachments/assets/03bfa69d-180b-479c-8a89-3dc23dc81837
 
+## ENTREGA 2
+
+### Backlog
+
+#### ![backlog entrega 2](https://github.com/user-attachments/assets/408d80b3-27aa-49a7-a32b-ea9d73927958)
+
+### Quadro 
+
+#### ![quadro da sprint 2](https://github.com/user-attachments/assets/055ad2f5-30e5-4480-a0e0-b070de4ce624)
+
+### SCREENCAST 
 
 
 
+### JIRA
 
+#### https://fitplan1.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiNDlhMDkwY2I2ZDdjNDZjMWIxNzhmYjIwMzgzZjkzNGYiLCJwIjoiaiJ9
 
+### HISTÓRIAS DE USUÁRIO, SKETCHES E STORYBOARDS
+
+#### https://docs.google.com/document/d/1mXOrMMoz56LhczCAXAJR8os5Ocz_8ObfpA3Uqa7sZ24/edit?usp=sharing
