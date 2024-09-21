@@ -44,7 +44,7 @@ https://github.com/user-attachments/assets/03bfa69d-180b-479c-8a89-3dc23dc81837
 
 ### Quadro 
 
-
+![quadro da sprint 2](https://github.com/user-attachments/assets/055ad2f5-30e5-4480-a0e0-b070de4ce624)
 
 ### SCREENCAST 
 
