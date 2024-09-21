@@ -36,8 +36,16 @@
 #### 
 https://github.com/user-attachments/assets/03bfa69d-180b-479c-8a89-3dc23dc81837
 
+## ENTREGA 2
+
+### Backlog
 
 
 
+### Quadro 
+
+
+
+### SCREENCAST 
 
 
