@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitPlan - Menu</title>
+    <title>FitPlan - Duração do Treino</title>
     <style>
         * {
             margin: 0;
@@ -24,7 +24,7 @@
         .container {
             background-color: white;
             width: 90%;
-            max-width: 60rem;
+            max-width: 500px;
             padding: 2rem;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -37,56 +37,51 @@
             margin-bottom: 2rem;
         }
 
-        .menu-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: space-between;
+        .duracao-group {
+            margin-bottom: 1.5rem;
         }
 
-        .menu-item, .menu-link {
-            flex: 1 1 calc(45% - 1rem);
-            max-width: 45%;
+        .btn-duracao {
+            width: 100%;
             padding: 1rem;
             background-color: #ccc;
-            border-radius: 5px;
-            font-size: 1.1rem;
+            border: none;
+            font-size: 1.2rem;
             font-weight: bold;
-            text-align: center;
+            margin-bottom: 1rem;
             cursor: pointer;
-            text-decoration: none; 
-            color: black;
-            display: inline-block;
+            border-radius: 5px;
         }
 
-        .menu-item:hover, .menu-link:hover {
+        .btn-duracao:hover {
             background-color: #aaa;
         }
 
-        @media (max-width: 768px) {
-            .menu-item, .menu-link {
-                flex: 1 1 100%;
-                max-width: 100%;
-            }
+        .voltar {
+            display: inline-block;
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            color: #000;
+            text-decoration: none;
+        }
 
-            h1 {
-                font-size: 2rem;
-            }
+        .voltar:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>FITPLAN</h1>
-        <div class="menu-grid">
-            <a href="/intensidade/" class="menu-link">Treinar</a>
-            <div class="menu-item">Acompanhamento de progresso</div>
-            <div class="menu-item">Calculadora IMC</div>
-            <div class="menu-item">Medidas</div>
-            <div class="menu-item">Plano nutricional</div>
-            <div class="menu-item">Objetivos</div>
+        <h1>ESCOLHA A DURAÇÃO DO SEU TREINO:</h1>
+        
+        <div class="duracao-group">
+            <button class="btn-duracao">45MIN</button>
+            <button class="btn-duracao">1HR</button>
+            <button class="btn-duracao">1HR 30MIN</button>
         </div>
+
+        <a href="/intensidade/" class="voltar">Voltar</a>
     </div>
 
 </body>

@@ -37,3 +37,15 @@ def cadastro_view(request):
 
 def menu_view(request):
     return render(request, 'telademenu.html')
+
+def intensidade_view(request):
+    if request.method == 'POST':
+        intensidade = request.POST.get('intensidade')
+        request.session['intensidade'] = intensidade
+        return redirect('duracao')
+    return render(request, 'teladeintensidade.html')
+
+def duracao_view(request):
+    intensidade = request.session.get('intensidade', 'Não selecionada')
+    return render(request, 'teladeduracao.html', {'intensidade': intensidade})
+
