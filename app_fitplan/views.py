@@ -60,5 +60,16 @@ def local_view(request):
         return redirect('menu') 
     return render(request, 'teladelocal.html')
 
-def calculadoraimc(request):
-    return render(request, 'calculadoraimc.html')
+def calculadora_imc(request):
+    imc = None
+    if request.method == 'POST':
+        try:
+            peso = float(request.POST.get('peso'))
+            altura = float(request.POST.get('altura'))
+            if altura > 0:
+                imc = peso / (altura ** 2)
+                imc = round(imc, 2) 
+        except (ValueError, TypeError):
+            imc = None
+
+    return render(request, 'calculadoraimc.html', {'imc': imc})

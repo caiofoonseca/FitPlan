@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitPlan - Calculadora de IMC</title>
+    <title>FitPlan - Calculadora IMC</title>
     <style>
         * {
             margin: 0;
@@ -22,132 +22,208 @@
         }
 
         .container {
-            background-color: white;
-            width: 90%;
-            max-width: 800px;
-            padding: 2rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            border-radius: 10px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 1000px;
+            width: 90%;
+        }
+
+        .left-section, .right-section {
+            width: 48%;
         }
 
         h1 {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #333;
+            text-align: center;
             margin-bottom: 1rem;
-            text-transform: uppercase;
+        }
+
+        .explanation {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
         }
 
         .input-group {
             margin-bottom: 1rem;
         }
 
-        .input-group label {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
+        label {
             display: block;
-            font-size: 1.2rem;
-            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
         }
 
-        .input-group input {
+        input[type="number"] {
             width: 100%;
             padding: 0.8rem;
             font-size: 1rem;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 1rem;
+            border-radius: 6px;
         }
 
-        .form-section {
-            width: 45%;
-        }
-
-        .imc-result {
-            font-weight: bold;
+        button {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #388e3c;
+            color: white;
             font-size: 1.2rem;
-            text-align: left;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2e7d32;
+        }
+
+        .output-group {
             margin-top: 1rem;
         }
 
-        .imc-table img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
-
-        .btn-voltar-menu {
-            margin-top: 2rem;
-            padding: 0.8rem 2rem;
-            background-color: transparent;
-            border: 2px solid #388e3c;
-            color: #388e3c;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
+        .output-group input {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
             border-radius: 6px;
-            transition: background-color 0.3s, color 0.3s;
+            background-color: #f0f0f0;
         }
 
-        .btn-voltar-menu:hover {
-            background-color: #388e3c; 
+        .imc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .imc-table th, .imc-table td {
+            border: 1px solid #ccc;
+            padding: 0.8rem;
+            text-align: center;
+        }
+
+        .imc-table th {
+            background-color: #388e3c;
             color: white;
         }
 
+        .btn-voltar-menu {
+            display: block;
+            width: 100%;
+            margin-top: 2rem;
+            padding: 0.8rem;
+            text-align: center;
+            background-color: transparent;
+            color: #388e3c;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: 2px solid #388e3c;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-voltar-menu:hover {
+            background-color: #388e3c;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .left-section, .right-section {
+                width: 100%;
+                margin-bottom: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .btn-voltar-menu {
+                font-size: 1rem;
+            }
+        }
     </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="container">
-        <div class="form-section">
-            <h1>FitPlan</h1>
-            <p>Digite sua altura e seu peso para obter o seu IMC (Índice de Massa Corporal):</p>
-
-            <form id="imc-form">
+        <div class="left-section">
+            <h1>FITPLAN</h1>
+            <p class="explanation">Digite sua altura e seu peso para obter o seu IMC (Índice de Massa Corporal):</p>
+            
+            <form method="POST">
+                {% csrf_token %}
                 <div class="input-group">
                     <label for="peso">Peso (em kg):</label>
-                    <input type="number" id="peso" placeholder="Digite seu peso" required>
+                    <input type="number" step="0.1" id="peso" name="peso" required>
                 </div>
-
                 <div class="input-group">
                     <label for="altura">Altura (em metros):</label>
-                    <input type="number" id="altura" step="0.01" placeholder="Digite sua altura" required>
+                    <input type="number" step="0.01" id="altura" name="altura" required>
                 </div>
+                <button type="submit">Calcular IMC</button>
 
-                <button type="button" onclick="calcularIMC()">Calcular IMC</button>
-
-                <div class="imc-result">
-                    <label for="resultado-imc">Seu IMC:</label>
-                    <input type="text" id="resultado-imc" readonly>
+                <div class="output-group">
+                    <label for="imc">Seu IMC:</label>
+                    <input type="text" id="imc" name="imc" readonly value="{% if imc %}{{ imc }}{% else %}--{% endif %}">
                 </div>
             </form>
         </div>
 
-        <div class="imc-table">
-            <img src="https://i.imgur.com/RmICWXx.png" alt="Tabela de Classificação de IMC">
+        <div class="right-section">
+            <table class="imc-table">
+                <thead>
+                    <tr>
+                        <th>IMC</th>
+                        <th>Classificação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Menor que 16</td>
+                        <td>Subpeso Severo</td>
+                    </tr>
+                    <tr>
+                        <td>16 - 19,9</td>
+                        <td>Subpeso</td>
+                    </tr>
+                    <tr>
+                        <td>20 - 24,9</td>
+                        <td>Normal</td>
+                    </tr>
+                    <tr>
+                        <td>25 - 29,9</td>
+                        <td>Sobrepeso</td>
+                    </tr>
+                    <tr>
+                        <td>30 - 39,9</td>
+                        <td>Obeso</td>
+                    </tr>
+                    <tr>
+                        <td>Maior que 40</td>
+                        <td>Obeso Mórbido</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a href="/menu/" class="btn-voltar-menu">Voltar Menu</a>
         </div>
     </div>
 
-    <a href="/menu/">
-        <button class="btn-voltar-menu">Voltar Menu</button>
-    </a>
-
-    <script>
-        function calcularIMC() {
-            const peso = parseFloat(document.getElementById('peso').value);
-            const altura = parseFloat(document.getElementById('altura').value);
-
-            if (isNaN(peso) || isNaN(altura)) {
-                alert("Por favor, insira valores válidos.");
-                return;
-            }
-
-            const imc = (peso / (altura * altura)).toFixed(2);
-            document.getElementById('resultado-imc').value = imc;
-        }
-    </script>
 </body>
 </html>
