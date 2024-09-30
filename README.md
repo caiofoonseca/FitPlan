@@ -9,8 +9,7 @@
 ### - Marcelo Bressani (mbvo@cesar.school)
 ### - Arthur Lúcio Silva (alams2@cesar.school)
 ### - João Claudio Beltrão (jccbf@cesar.school)
-### - Davi Dimitri
-(ddbm@cesar.school)
+### - Davi Dimitri   (ddbm@cesar.school)
 ## ENTREGA 1
 
 ### JIRA
