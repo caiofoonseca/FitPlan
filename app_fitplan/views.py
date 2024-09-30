@@ -59,3 +59,6 @@ def local_view(request):
         request.session['local'] = local
         return redirect('menu') 
     return render(request, 'teladelocal.html')
+
+def calculadoraimc(request):
+    return render(request, 'calculadoraimc.html')

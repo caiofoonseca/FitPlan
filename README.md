@@ -41,11 +41,11 @@ https://github.com/user-attachments/assets/03bfa69d-180b-479c-8a89-3dc23dc81837
 
 ### Backlog
 
-#### ![backlog entrega 2](https://github.com/user-attachments/assets/408d80b3-27aa-49a7-a32b-ea9d73927958)
+#### ![Backlog da entrega 2](https://github.com/user-attachments/assets/90b0576f-45de-4992-b523-484f70b76b76)
 
 ### Quadro 
 
-#### ![quadro da sprint 2](https://github.com/user-attachments/assets/055ad2f5-30e5-4480-a0e0-b070de4ce624)
+#### ![Quadro da entrega 2](https://github.com/user-attachments/assets/cd6319a7-e076-4f6a-9e77-d9a0ceb0fd6e)
 
 ### SCREENCAST 
 
