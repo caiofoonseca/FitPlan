@@ -49,7 +49,8 @@ https://github.com/user-attachments/assets/03bfa69d-180b-479c-8a89-3dc23dc81837
 
 ### SCREENCAST 
 
-https://github.com/user-attachments/assets/0b61eee8-0ada-4fa3-903b-3fc321c1dba9
+https://github.com/user-attachments/assets/e02f6cce-2fcc-4ce6-9a84-e64e56e70529
+
 
 ### JIRA
 
