@@ -1,9 +1,5 @@
 import os
 from pathlib import Path
-from dotenv import load_dotenv  # Para carregar variáveis de ambiente do arquivo .env
-
-# Carregar as variáveis de ambiente do arquivo .env
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,12 +8,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-6)o((ybe3rdi0ch587%2@gso3seqnmj2ltkkz!j=ounzc=+8$q')
+SECRET_KEY = 'django-insecure-6)o((ybe3rdi0ch587%2@gso3seqnmj2ltkkz!j=ounzc=+8$q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'True') == 'True'
+DEBUG = True
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost,fitplan.com,www.fitplan.com').split(',')
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -28,7 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app_fitplan',  # Seu app Django
+    'app_fitplan',
 ]
 
 MIDDLEWARE = [
@@ -66,12 +62,8 @@ WSGI_APPLICATION = 'FitPlan.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'fitplan-db'),
-        'USER': os.getenv('DB_USER', 'zuryjfcxh'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'sua_senha_azure'),
-        'HOST': 'fitplan-server.postgres.database.azure.com',
-        'PORT': '5432', 
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
