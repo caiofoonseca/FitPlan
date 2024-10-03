@@ -34,17 +34,13 @@ jobs:
 
       - name: Cleaning testing files
         run: |
-          cd FitPlan/
           rm db.sqlite3
           rm .env
-          cd ..
 
       - name: Zip artifact for deployment
         run: |
-          cd FitPlan/
           zip release.zip ./* -r
-          cd ..
-          mv FitPlan/release.zip .
+          mv release.zip .
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
