@@ -35,7 +35,9 @@ jobs:
       - name: Cleaning testing files
         run: |
           rm db.sqlite3
+          cd FitPlan
           rm .env
+          cd ..
 
       - name: Zip artifact for deployment
         run: |
