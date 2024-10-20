@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
-from .models import Medida
+from .models import Progresso
 from django.http import HttpResponse
 
 def login_view(request):
@@ -77,20 +77,20 @@ def calculadora_imc(request):
 
     return render(request, 'calculadoraimc.html', {'imc': imc})
 
-def medidas(request):
-    medidas = Medida.objects.all()
-    return render(request, 'medidas.html', {'medidas': medidas})
+def progresso(request):
+    progressos = Progresso.objects.all()
+    return render(request, 'progresso.html', {'progressos': progressos})
 
-def upload_medida(request):
+def upload_progresso(request):
     if request.method == 'POST':
         imagem = request.FILES['imagem']
         data = request.POST['data']
-        medida = Medida(imagem=imagem, data=data)
-        medida.save()
-        return redirect('medidas')
+        progresso = Progresso(imagem=imagem, data=data)
+        progresso.save()
+        return redirect('progresso')
     return HttpResponse(status=400)
 
-def excluir_medida(request, medida_id):
-    medida = get_object_or_404(Medida, id=medida_id)
-    medida.delete()
-    return redirect('medidas')
+def excluir_progresso(request, progresso_id):
+    progresso = get_object_or_404(Progresso, id=progresso_id)
+    progresso.delete()
+    return redirect('progresso')

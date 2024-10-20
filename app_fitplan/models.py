@@ -1,8 +1,8 @@
 from django.db import models
 
-class Medida(models.Model):
-    imagem = models.ImageField(upload_to='medidas/')
+class Progresso(models.Model):
+    imagem = models.ImageField(upload_to='progresso/')
     data = models.DateField()
 
     def __str__(self):
-        return f"Medida de {self.data}"
+        return f"Progresso de {self.data}"
