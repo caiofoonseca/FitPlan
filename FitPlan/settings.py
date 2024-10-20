@@ -11,14 +11,12 @@ load_dotenv(BASE_DIR / '.env')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-TARGET_ENV = os.getenv('TARGET_ENV')
+TARGET_ENV = os.getenv('TARGET_ENV', 'Dev')
 NOT_PROD = not TARGET_ENV.lower().startswith('prod')
 
 if NOT_PROD:
     # Configurações de desenvolvimento
-    # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
-    # SECURITY WARNING: keep the secret key used in production secret!
     SECRET_KEY = 'django-insecure-6)o((ybe3rdi0ch587%2@gso3seqnmj2ltkkz!j=ounzc=+8$q'
     ALLOWED_HOSTS = []
     DATABASES = {
@@ -34,8 +32,7 @@ else:
     ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
     CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
 
-    SECURE_SSL_REDIRECT = \
-        os.getenv('SECURE_SSL_REDIRECT', '0').lower() in ['true', 't', '1']
+    SECURE_SSL_REDIRECT = os.getenv('SECURE_SSL_REDIRECT', '0').lower() in ['true', 't', '1']
 
     if SECURE_SSL_REDIRECT:
         SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -66,7 +63,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    # Adiciona whitenoise middleware após o security middleware
     'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -96,10 +92,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'FitPlan.wsgi.application'
 
-# Static files (CSS, JavaScript, Images)
+# Configuração dos arquivos estáticos
 STATIC_URL = os.environ.get('DJANGO_STATIC_URL', "/static/")
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Configuração dos arquivos de mídia para o upload de imagens
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [

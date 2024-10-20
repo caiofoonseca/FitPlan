@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPlan - Medidas</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7e9; /* Fundo verde claro */
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50; /* Cor do cabeçalho */
+            padding: 20px;
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            color: #333;
+        }
+
+        input[type="file"],
+        input[type="date"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        input[type="file"],
+        input[type="date"] {
+            background-color: #f9f9f9;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .photo-gallery {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .photo-gallery h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .photos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .photo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .photo-item img {
+            width: 100%;
+            max-width: 150px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-item p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .menu-button {
+            width: 100%;
+            max-width: 600px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            form,
+            .photo-gallery {
+                width: 100%;
+            }
+
+            input[type="file"],
+            input[type="date"],
+            button {
+                font-size: 14px;
+            }
+
+            .menu-button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>FITPLAN</header>
+
+    <div class="container">
+        <h1>Adicionar Nova Medida</h1>
+        <form method="post" enctype="multipart/form-data" action="/upload-medida/">
+            {% csrf_token %}
+            <label for="imagem">Enviar Imagem</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*" required>
+
+            <label for="data">Data da Foto</label>
+            <input type="date" id="data" name="data" required>
+
+            <button type="submit">Salvar Medida</button>
+        </form>
+
+        <div class="photo-gallery">
+            <h2>Histórico de Medidas</h2>
+            <div class="photos">
+                {% for medida in medidas %}
+                <div class="photo-item">
+                    <img src="{{ medida.imagem.url }}" alt="Medida">
+                    <p>{{ medida.data }}</p>
+                    <form method="post" action="{% url 'excluir_medida' medida.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Excluir</button>
+                    </form>
+                </div>
+                {% empty %}
+                <p>Nenhuma medida salva ainda.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <a href="/menu/" class="menu-button">Voltar ao Menu</a>
+    </div>
+
+</body>
+</html>

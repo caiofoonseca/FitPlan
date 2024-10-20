@@ -1,7 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404 
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.core.files.storage import FileSystemStorage
+from .models import Medida
+from django.http import HttpResponse
 
 def login_view(request):
     if request.method == 'POST':
@@ -73,3 +76,21 @@ def calculadora_imc(request):
             imc = None
 
     return render(request, 'calculadoraimc.html', {'imc': imc})
+
+def medidas(request):
+    medidas = Medida.objects.all()
+    return render(request, 'medidas.html', {'medidas': medidas})
+
+def upload_medida(request):
+    if request.method == 'POST':
+        imagem = request.FILES['imagem']
+        data = request.POST['data']
+        medida = Medida(imagem=imagem, data=data)
+        medida.save()
+        return redirect('medidas')
+    return HttpResponse(status=400)
+
+def excluir_medida(request, medida_id):
+    medida = get_object_or_404(Medida, id=medida_id)
+    medida.delete()
+    return redirect('medidas')
