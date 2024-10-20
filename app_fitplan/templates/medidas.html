@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPlan - Monitoramento de Medidas</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7e9; /* Fundo verde claro */
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50; /* Cor do cabeçalho */
+            padding: 10px;
+            text-align: center;
+            font-size: 36px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            background-color: #f9f9f9;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .btn-voltar {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: transparent;
+            border: 2px solid #4CAF50;
+            color: #4CAF50;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-voltar:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .historico-medidas {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .historico-medidas h2 {
+            margin-bottom: 20px;
+        }
+
+        .medida-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .medida-item:last-child {
+            border-bottom: none;
+        }
+
+        .medida-detalhes {
+            flex: 1;
+        }
+
+        .medida-excluir {
+            display: flex;
+            align-items: center;
+        }
+
+        .medida-excluir form {
+            margin: 0;
+        }
+
+        .medida-excluir button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .medida-excluir button:hover {
+            background-color: darkred;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            form {
+                width: 100%;
+            }
+
+            input[type="text"],
+            input[type="date"],
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>FitPlan</header>
+
+    <div class="container">
+        <h1>Adicionar Nova Medida</h1>
+        <form method="post" enctype="multipart/form-data" action="/upload-medida/">
+            {% csrf_token %}
+            <label for="peso">Peso (kg)</label>
+            <input type="text" id="peso" name="peso" required>
+
+            <label for="altura">Altura (m)</label>
+            <input type="text" id="altura" name="altura" required>
+
+            <label for="cintura">Cintura (cm)</label>
+            <input type="text" id="cintura" name="cintura" required>
+
+            <label for="quadril">Quadril (cm)</label>
+            <input type="text" id="quadril" name="quadril" required>
+
+            <label for="data">Data</label>
+            <input type="date" id="data" name="data" required>
+
+            <button type="submit">Salvar Medida</button>
+        </form>
+
+        <div class="historico-medidas">
+            <h2>Histórico de Medidas</h2>
+            {% if medidas %}
+                {% for medida in medidas %}
+                <div class="medida-item">
+                    <div class="medida-detalhes">
+                        <p>Peso: {{ medida.peso }} kg | Altura: {{ medida.altura }} m | Cintura: {{ medida.cintura }} cm | Quadril: {{ medida.quadril }} cm | Data: {{ medida.data }}</p>
+                    </div>
+                    <div class="medida-excluir">
+                        <form action="{% url 'excluir_medida' medida.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Excluir</button>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>Nenhuma medida registrada ainda.</p>
+            {% endif %}
+        </div>
+
+        <a href="/menu/" class="btn-voltar">Voltar ao Menu</a>
+    </div>
+
+</body>
+</html>

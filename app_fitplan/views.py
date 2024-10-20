@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
-from .models import Progresso
+from .models import Progresso, Medida  # Corrigido para importar Medida
 from django.http import HttpResponse
 
 def login_view(request):
@@ -26,13 +26,11 @@ def cadastro_view(request):
         email = request.POST['email']
         password = request.POST['password']
 
-        # Verifica se o nome de usuário já existe
         if not User.objects.filter(username=username).exists():
-            # Cria o usuário
             user = User.objects.create_user(username=username, email=email, password=password, first_name=nome_completo)
             user.save()
             messages.success(request, 'Cadastro realizado com sucesso! Faça o login.')
-            return redirect('login')  # Redireciona para a tela de login após cadastro
+            return redirect('login')  
         else:
             messages.error(request, 'O nome de usuário já existe. Tente outro.')
     
@@ -47,7 +45,6 @@ def intensidade_view(request):
         request.session['intensidade'] = intensidade
         return redirect('duracao')
     return render(request, 'teladeintensidade.html')
-
 
 def duracao_view(request):
     if request.method == 'POST':
@@ -77,6 +74,7 @@ def calculadora_imc(request):
 
     return render(request, 'calculadoraimc.html', {'imc': imc})
 
+# Acompanhamento de Progresso
 def progresso(request):
     progressos = Progresso.objects.all()
     return render(request, 'progresso.html', {'progressos': progressos})
@@ -94,3 +92,27 @@ def excluir_progresso(request, progresso_id):
     progresso = get_object_or_404(Progresso, id=progresso_id)
     progresso.delete()
     return redirect('progresso')
+
+# Medidas Corporais
+def medidas(request):
+    medidas = Medida.objects.all()  
+    return render(request, 'medidas.html', {'medidas': medidas})
+
+def upload_medida(request):
+    if request.method == 'POST':
+        peso = request.POST['peso']
+        altura = request.POST['altura']
+        cintura = request.POST['cintura']
+        quadril = request.POST['quadril']
+        data = request.POST['data']
+        
+        medida = Medida(peso=peso, altura=altura, cintura=cintura, quadril=quadril, data=data)
+        medida.save()
+
+        return redirect('medidas')
+    return HttpResponse(status=400)
+
+def excluir_medida(request, medida_id):
+    medida = get_object_or_404(Medida, id=medida_id)
+    medida.delete()
+    return redirect('medidas')
