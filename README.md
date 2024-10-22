@@ -68,7 +68,7 @@ https://github.com/user-attachments/assets/e02f6cce-2fcc-4ce6-9a84-e64e56e70529
 
 ### Quadro
 
-####
+#### ![quadro entrega 3](https://github.com/user-attachments/assets/abd6f6ec-cf67-4712-8b96-667b50636c6a)
 
 ### JIRA
 
@@ -77,4 +77,12 @@ https://github.com/user-attachments/assets/e02f6cce-2fcc-4ce6-9a84-e64e56e70529
 ### HISTÓRIAS DE USUÁRIO, SKETCHES E STORYBOARDS
 
 #### https://docs.google.com/document/d/1mXOrMMoz56LhczCAXAJR8os5Ocz_8ObfpA3Uqa7sZ24/edit?usp=sharing
+
+### Screencast 
+
+####
+
+### Screencast testes
+
+#### 
 
