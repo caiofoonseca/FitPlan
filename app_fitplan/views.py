@@ -74,7 +74,6 @@ def calculadora_imc(request):
 
     return render(request, 'calculadoraimc.html', {'imc': imc})
 
-# Acompanhamento de Progresso
 def progresso(request):
     progressos = Progresso.objects.all()
     return render(request, 'progresso.html', {'progressos': progressos})
@@ -93,7 +92,6 @@ def excluir_progresso(request, progresso_id):
     progresso.delete()
     return redirect('progresso')
 
-# Medidas Corporais
 def medidas(request):
     medidas = Medida.objects.all()  
     return render(request, 'medidas.html', {'medidas': medidas})
@@ -116,3 +114,6 @@ def excluir_medida(request, medida_id):
     medida = get_object_or_404(Medida, id=medida_id)
     medida.delete()
     return redirect('medidas')
+
+def dicas_alimentares(request):
+    return render(request, 'dicasalimentares.html')

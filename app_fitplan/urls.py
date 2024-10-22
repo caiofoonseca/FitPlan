@@ -18,6 +18,7 @@ urlpatterns = [
     path('medidas/', views.medidas, name='medidas'),
     path('upload-medida/', views.upload_medida, name='upload_medida'),
     path('excluir-medida/<int:medida_id>/', views.excluir_medida, name='excluir_medida'),
+    path('dicas-alimentares/', views.dicas_alimentares, name='dicas_alimentares'),
 ]
 
 if settings.DEBUG:
