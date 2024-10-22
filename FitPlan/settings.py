@@ -56,7 +56,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # Adiciona whitenoise na lista de aplicativos instalados
     "whitenoise.runserver_nostatic",
     'app_fitplan',
 ]
