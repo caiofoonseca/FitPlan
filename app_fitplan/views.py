@@ -3,8 +3,9 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
-from .models import Progresso, Medida  # Corrigido para importar Medida
+from .models import Progresso, Medida  
 from django.http import HttpResponse
+from django.core.files.storage import default_storage
 
 def login_view(request):
     if request.method == 'POST':
@@ -80,11 +81,21 @@ def progresso(request):
 
 def upload_progresso(request):
     if request.method == 'POST':
-        imagem = request.FILES['imagem']
-        data = request.POST['data']
-        progresso = Progresso(imagem=imagem, data=data)
-        progresso.save()
-        return redirect('progresso')
+        try:
+            if 'imagem' not in request.FILES:
+                return HttpResponse("Nenhum arquivo de imagem enviado", status=400)
+
+            imagem = request.FILES['imagem']
+            data = request.POST['data']
+
+            file_name = default_storage.save(f'progresso/{imagem.name}', imagem)
+            
+            progresso = Progresso(imagem=file_name, data=data)
+            progresso.save()
+
+            return redirect('progresso')
+        except Exception as e:
+            return HttpResponse(f"Erro ao salvar o progresso: {str(e)}", status=500)
     return HttpResponse(status=400)
 
 def excluir_progresso(request, progresso_id):
@@ -98,16 +109,19 @@ def medidas(request):
 
 def upload_medida(request):
     if request.method == 'POST':
-        peso = request.POST['peso']
-        altura = request.POST['altura']
-        cintura = request.POST['cintura']
-        quadril = request.POST['quadril']
-        data = request.POST['data']
-        
-        medida = Medida(peso=peso, altura=altura, cintura=cintura, quadril=quadril, data=data)
-        medida.save()
+        try:
+            peso = float(request.POST['peso'])
+            altura = float(request.POST['altura'])
+            cintura = float(request.POST['cintura'])
+            quadril = float(request.POST['quadril'])
+            data = request.POST['data']
 
-        return redirect('medidas')
+            medida = Medida(peso=peso, altura=altura, cintura=cintura, quadril=quadril, data=data)
+            medida.save()
+
+            return redirect('medidas')
+        except ValueError:
+            return HttpResponse("Erro ao processar os dados da medida", status=400)
     return HttpResponse(status=400)
 
 def excluir_medida(request, medida_id):
