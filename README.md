@@ -94,3 +94,5 @@ https://github.com/user-attachments/assets/68628ec5-47aa-4876-82e2-dd99c718b474
 
 
 ### Bug Tracker
+
+#### ![image](https://github.com/user-attachments/assets/f85266a8-d2a9-49b0-b272-ecf83d549941)
