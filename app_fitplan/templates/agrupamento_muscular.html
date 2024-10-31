@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPlan - Agrupamento Muscular</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #4caf50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 1rem;
+        }
+
+        .container {
+            background-color: white;
+            width: 90%;
+            max-width: 500px;
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .btn-agrupamento {
+            width: 100%;
+            padding: 1rem;
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-agrupamento:hover {
+            background-color: #2e7d32;
+            transform: translateY(-2px);
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Selecione o Agrupamento Muscular</h1>
+        
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" name="agrupamento" value="Peito e tríceps" class="btn-agrupamento">Peito e tríceps</button>
+            <button type="submit" name="agrupamento" value="Costas e bíceps" class="btn-agrupamento">Costas e bíceps</button>
+            <button type="submit" name="agrupamento" value="Posterior de perna e quadríceps" class="btn-agrupamento">Posterior de perna e quadríceps</button>
+            <button type="submit" name="agrupamento" value="Ombro e antebraço" class="btn-agrupamento">Ombro e antebraço</button>
+        </form>
+    </div>
+
+</body>
+</html>

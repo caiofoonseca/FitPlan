@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPlan - Treinos Favoritados</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #4caf50; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        .container {
+            background-color: white;
+            width: 100%;
+            max-width: 500px;
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .favorito-list {
+            list-style-type: none;
+            margin-top: 1rem;
+            padding: 0;
+        }
+
+        .favorito-item {
+            font-size: 1.1rem;
+            color: #333;
+            margin: 0.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .remove-favorito {
+            color: red;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.6rem 1.2rem;
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Treinos Favoritados</h1>
+        <ul class="favorito-list">
+            {% for favorito in favoritos %}
+                <li class="favorito-item">
+                    {{ favorito.exercicio }} - {{ favorito.treino.data }}
+                    <a href="{% url 'remover_favorito' favorito.id %}" class="remove-favorito">❌</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{% url 'menu' %}" class="back-button">Voltar ao Menu</a>
+    </div>
+
+</body>
+</html>

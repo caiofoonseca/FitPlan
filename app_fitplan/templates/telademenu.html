@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitPlan - Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,13 +18,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             padding: 1rem;
         }
 
         .container {
             background-color: white;
-            width: 90%;
+            width: 100%;
             max-width: 60rem;
             padding: 2rem;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -32,7 +33,7 @@
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: bold;
             color: #333;
             margin-bottom: 2rem;
@@ -46,7 +47,7 @@
             justify-content: space-between;
         }
 
-        .menu-item, .menu-link {
+        .menu-link {
             flex: 1 1 calc(45% - 1rem);
             max-width: 45%;
             padding: 1rem;
@@ -56,30 +57,27 @@
             font-size: 1.2rem;
             font-weight: bold;
             text-align: center;
-            cursor: pointer;
-            text-decoration: none; 
+            text-decoration: none;
             display: inline-block;
             transition: background-color 0.3s, transform 0.3s;
         }
 
-        .menu-item:hover, .menu-link:hover {
-            background-color: #2e7d32; 
-            transform: translateY(-2px); 
+        .menu-link:hover {
+            background-color: #2e7d32;
+            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
-            .menu-item, .menu-link {
+            .menu-link {
                 flex: 1 1 100%;
                 max-width: 100%;
             }
 
             h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
         }
     </style>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -91,7 +89,8 @@
             <a href="/calculadora-imc/" class="menu-link">Calculadora IMC</a>
             <a href="/medidas/" class="menu-link">Medidas</a>
             <a href="/dicas-alimentares/" class="menu-link">Dicas alimentares</a>
-            <div class="menu-item">Objetivos</div>
+            <a href="/historico_treinos/" class="menu-link">Histórico de Treinos</a>
+            <a href="/favoritos/" class="menu-link">Treinos Favoritados</a>
         </div>
     </div>
 
