@@ -57,7 +57,7 @@ class FitPlanSeleniumTests(LiveServerTestCase):
 
         self.driver.get(f'{self.live_server_url}/progresso/')
         time.sleep(4)
-        image_path = r'C:\Users\Caio Fonseca\Desktop\tudo FDS\boneco-fds.jpg'
+        image_path = r'C:\Users\Caio\Desktop\tudo FDS\boneco-fds.jpg'
         self.driver.find_element(By.NAME, 'imagem').send_keys(image_path)
         time.sleep(2)
 
