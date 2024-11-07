@@ -952,6 +952,8 @@ def agrupamento_muscular_view(request):
     return render(request, 'agrupamento_muscular.html')
 
 def remover_favorito(request, favorito_id):
-    favorito = get_object_or_404(Favorito, id=favorito_id, usuario=request.user)
-    favorito.delete()
-    return redirect('favoritos')
+    if request.method == 'POST':  
+        favorito = get_object_or_404(Favorito, id=favorito_id, usuario=request.user)
+        favorito.delete()
+        return JsonResponse({'status': 'success'})  
+    return JsonResponse({'status': 'error'}, status=400)

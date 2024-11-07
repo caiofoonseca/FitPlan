@@ -47,7 +47,8 @@ else:
             'OPTIONS': {'sslmode': 'require'},
         }
     }
-
+    
+app_name = 'app_fitplan'
 # Application definition
 INSTALLED_APPS = [
     "django.contrib.admin",

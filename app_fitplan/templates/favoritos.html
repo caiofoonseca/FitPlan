@@ -80,9 +80,31 @@
             }
         }
     </style>
+    <script>
+        document.querySelectorAll('.remove-favorito').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const url = this.href;
+    
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        this.closest('.favorito-item').remove();
+                    } else {
+                        alert('Erro ao remover o favorito.');
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
-
     <div class="container">
         <h1>Treinos Favoritados</h1>
         <ul class="favorito-list">
@@ -94,8 +116,7 @@
             {% endfor %}
         </ul>
 
-        <a href="{% url 'menu' %}" class="back-button">Voltar ao Menu</a>
+        <a href="{% url 'treinos_favoritos' %}" class="back-button">Voltar ao Menu</a>
     </div>
-
 </body>
 </html>
