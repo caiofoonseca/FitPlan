@@ -124,3 +124,5 @@ https://github.com/user-attachments/assets/68628ec5-47aa-4876-82e2-dd99c718b474
 
 
 ### Bug Tracker
+
+![bug tracker entrega 4](https://github.com/user-attachments/assets/50477849-c9f2-416e-aa35-85c99f2a867f)
