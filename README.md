@@ -96,3 +96,31 @@ https://github.com/user-attachments/assets/68628ec5-47aa-4876-82e2-dd99c718b474
 ### Bug Tracker
 
 #### ![image](https://github.com/user-attachments/assets/f85266a8-d2a9-49b0-b272-ecf83d549941)
+
+## ENTREGA 4
+
+### Backlog
+
+
+
+### Quadro
+
+
+
+### JIRA
+
+#### https://fitplan1.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiNDlhMDkwY2I2ZDdjNDZjMWIxNzhmYjIwMzgzZjkzNGYiLCJwIjoiaiJ9
+
+### HISTÓRIAS DE USUÁRIO, SKETCHES E STORYBOARDS
+
+#### https://docs.google.com/document/d/1mXOrMMoz56LhczCAXAJR8os5Ocz_8ObfpA3Uqa7sZ24/edit?usp=sharing
+
+### Screencast 
+
+
+
+### Screencast testes
+
+
+
+### Bug Tracker
