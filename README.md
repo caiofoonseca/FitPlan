@@ -101,12 +101,11 @@ https://github.com/user-attachments/assets/68628ec5-47aa-4876-82e2-dd99c718b474
 
 ### Backlog
 
-![backlog entrega 4](https://github.com/user-attachments/assets/5c50a5e0-6260-46c7-8dd1-f7144a8f3d2d)
-
+#### ![backlog entrega 4](https://github.com/user-attachments/assets/5c50a5e0-6260-46c7-8dd1-f7144a8f3d2d)
 
 ### Quadro
 
-
+#### ![quadro da entrega 4](https://github.com/user-attachments/assets/5729dd06-0705-4cd5-94e7-3f4d9e8412c6)
 
 ### JIRA
 
@@ -126,4 +125,4 @@ https://github.com/user-attachments/assets/68628ec5-47aa-4876-82e2-dd99c718b474
 
 ### Bug Tracker
 
-![bug tracker entrega 4](https://github.com/user-attachments/assets/50477849-c9f2-416e-aa35-85c99f2a867f)
+#### ![bug tracker entrega 4](https://github.com/user-attachments/assets/50477849-c9f2-416e-aa35-85c99f2a867f)
