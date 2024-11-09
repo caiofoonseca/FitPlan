@@ -122,6 +122,7 @@ https://github.com/user-attachments/assets/a079fe93-5428-4f7b-bfbb-f3f0640b97aa
 
 ### Screencast testes
 
+https://github.com/user-attachments/assets/373b9917-d5ec-4e67-b4cc-cbbc8883a6b9
 
 
 ### Bug Tracker
