@@ -116,13 +116,17 @@ def upload_medida(request):
             cintura = float(request.POST['cintura'])
             quadril = float(request.POST['quadril'])
             data = request.POST['data']
-
+            
             medida = Medida(peso=peso, altura=altura, cintura=cintura, quadril=quadril, data=data)
             medida.save()
 
             return redirect('medidas')
-        except ValueError:
-            return HttpResponse("Erro ao processar os dados da medida", status=400)
+        except ValueError as ve:
+            return HttpResponse(f"Erro ao processar os dados da medida: Valor inválido - {ve}", status=400)
+        except KeyError as ke:
+            return HttpResponse(f"Erro ao processar os dados da medida: Campo ausente - {ke}", status=400)
+        except Exception as e:
+            return HttpResponse(f"Erro ao processar os dados da medida: {str(e)}", status=500)
     return HttpResponse(status=400)
 
 def excluir_medida(request, medida_id):
