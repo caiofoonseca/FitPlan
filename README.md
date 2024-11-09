@@ -105,7 +105,7 @@ https://github.com/user-attachments/assets/68628ec5-47aa-4876-82e2-dd99c718b474
 
 ### Quadro
 
-#### ![quadro da entrega 4](https://github.com/user-attachments/assets/5729dd06-0705-4cd5-94e7-3f4d9e8412c6)
+#### ![quadro da entrega 4](https://github.com/user-attachments/assets/83d315f2-c995-42c0-b4b1-5a4a17eea993)
 
 ### JIRA
 
