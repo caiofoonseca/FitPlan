@@ -101,7 +101,7 @@ https://github.com/user-attachments/assets/68628ec5-47aa-4876-82e2-dd99c718b474
 
 ### Backlog
 
-#### ![backlog entrega 4](https://github.com/user-attachments/assets/5c50a5e0-6260-46c7-8dd1-f7144a8f3d2d)
+#### ![backlog da entrega 4](https://github.com/user-attachments/assets/611ec52e-e1c9-4860-a812-a3984d383dad)
 
 ### Quadro
 
