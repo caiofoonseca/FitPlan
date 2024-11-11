@@ -30,6 +30,8 @@
 
 #### - python manage.py migrate
 
+### - python manage.py makemigrations
+
 ## Execute o servidor local: 
 ### Inicie o servidor de desenvolvimento do Django para verificar se o ambiente está funcionando corretamente:
 
