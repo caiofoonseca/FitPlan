@@ -14,7 +14,6 @@
 ### Clone o repositório FitPlan para o seu ambiente local executando:
 
 #### - git clone https://github.com/caiofoonseca/FitPlan.git
-#### - cd FitPlan
 
 ### Ative o ambiente virtual:
 
